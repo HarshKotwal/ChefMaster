@@ -1,16 +1,38 @@
-# React + Vite
+# 🧑‍🍳 ChefClaude – Ingredient-Based Recipe Suggester
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ChefClaude is a React + Node.js project that lets users input ingredients and attempts to generate a recipe suggestion from them using an AI backend.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add ingredients via UI form
+- Dynamic ingredient list rendering
+- Backend API for recipe generation
+- Secure `.env` handling for private keys
+- Ready for AI integration (Hugging Face / others)
 
-## React Compiler
+## Tech Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React (Vite)
+- Express.js
+- Node.js
+- dotenv for environment variables
 
-## Expanding the ESLint configuration
+## How It Works
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The frontend collects ingredients and sends them to a backend endpoint:
+
+The backend is designed to request an AI model for recipe generation.
+
+## Current Status
+
+Everything is working (frontend + backend + API flow), however the AI call currently returns:
+"The requested model is not supported by any provider you have enabled."
+
+This is due to Hugging Face model/provider restrictions on the current account/token — not due to code issues.
+
+The app remains fully wired for real AI responses once proper provider access is enabled.
+
+## Future Plans
+
+- Enable a supported model provider
+- Format recipes in markdown
