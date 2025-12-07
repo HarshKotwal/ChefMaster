@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <header>
       <i className="fa-solid fa-kitchen-set"></i>
-      <span>Chef Claude</span>
+      <span>Chef Master</span>
     </header>
   );
 }

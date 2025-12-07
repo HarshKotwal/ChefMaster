@@ -47,8 +47,6 @@ export async function getRecipeFromMistral(ingredientsArr) {
     if (data.choices && data.choices[0]?.message?.content) {
       return data.choices[0].message.content;
     }
-
-    console.error("Unexpected response format:", data);
     return "Sorry, I couldn't generate a recipe. Please try again.";
   } catch (err) {
     console.error("Groq error:", err);

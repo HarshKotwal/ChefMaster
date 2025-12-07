@@ -23,22 +23,24 @@ export default function Main() {
       });
       if (!res.ok) {
         const text = await res.text();
-        console.error("Server error:", res.status, text);
+        // console.error("Server error:", res.status, text);
         setRecipe(`Server error: ${res.status}`);
         return;
       }
       const data = await res.json();
-      console.log("Recipe from backend:", data.recipe);
+      // console.log("Recipe from backend:", data.recipe);
       setRecipe(data.recipe || "No recipe returned from AI");
     } catch (err) {
-      console.error("Failed to fetch recipe:", err);
+      // console.error("Failed to fetch recipe:", err);
       setRecipe("Failed to fetch recipe from server.");
     }
   }
 
   function addIngredient(formData) {
     const newIngredient = formData.get("ingredient");
-    setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
+    if (newIngredient && newIngredient.trim()) {
+      setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
+    }
   }
 
   return (
