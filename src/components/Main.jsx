@@ -15,8 +15,9 @@ export default function Main() {
   }, [recipe]);
 
   async function getRecipe() {
+    const API_URL = import.meta.env.GROQ_API_KEY || "http://localhost:3001";
     try {
-      const res = await fetch("https://chef-master-api.onrender.com", {
+      const res = await fetch(`${API_URL}/api/recipe`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ingredients }),
