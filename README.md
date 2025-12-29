@@ -40,6 +40,7 @@ Previous Issue (Resolved): Initially used Hugging Face API which had model/provi
 ## Live Demo
 
 **Try it live:** https://chef-master-ruddy.vercel.app/
+
 **Deployment:**
 
 - Frontend: Vercel
