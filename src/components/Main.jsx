@@ -16,7 +16,7 @@ export default function Main() {
 
   async function getRecipe() {
     try {
-      const res = await fetch("http://localhost:3001/api/recipe", {
+      const res = await fetch("https://chef-master-api.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ingredients }),
